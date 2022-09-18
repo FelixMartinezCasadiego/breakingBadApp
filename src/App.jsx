@@ -1,4 +1,6 @@
-import { ItemListContainer } from "./components/item/ItemListContainer"
+import { ItemListContainer } from "./components/item/ItemListContainer";
+import { NavBar } from "./components/pages/NavBar";
+import { Search } from "./components/pages/Search";
 
 
 function App() {
@@ -6,9 +8,14 @@ function App() {
   return (
     <div>
 
-      <h1>Hello word</h1>
-      <ItemListContainer />
+      <NavBar />
+      <main>
 
+        <Search />
+        <ItemListContainer />
+
+      </main>
+      
 
     </div>
   )

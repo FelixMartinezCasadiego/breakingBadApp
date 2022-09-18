@@ -24,11 +24,13 @@ export const ItemListContainer = () => {
 
   return (
     <>
-        <div>
-
+        <div className='container-fluid'>
+            <div className='row col-12 d-flex justify-content-center m-0 px-5'>
             {
                 characters.map((character) => <ItemList character={character} key={character.char_id} quotes={quotes} /> )
             }
+            </div>
+
             
 
         </div>

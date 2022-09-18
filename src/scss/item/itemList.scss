@@ -1,10 +1,9 @@
 $primary: #006737;
 $text-color: #E0AB0F;
+
 body{
-  background: #eee;
+  background: #093a23;
 }
-
-
 
 .date__box {
   position: absolute;
@@ -147,4 +146,8 @@ a.icon-link {
   &.btn--only-icon {
     width: 50px;
   }
+}
+
+.read-more{
+  font-size: 15px;
 }
