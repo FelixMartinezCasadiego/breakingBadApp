@@ -1,7 +1,8 @@
 import React from 'react';
 import '../../scss/main.scss';
 
-export const ItemList = ({character}) => {
+export const ItemList = ({character, quotes}) => {
+
   return (
     <>
     
@@ -24,7 +25,7 @@ export const ItemList = ({character}) => {
           <p>
             <a href="#" className="icon-link mr-3"><i className="fa fa-pencil-square-o"></i> {character.nickname} </a>
           </p>
-          <p> Lorem !</p>
+          <p> {quotes.quote_id} </p>
           <a href="#" className="btn btn--with-icon read-more"><i className="btn-icon fa fa-long-arrow-right"></i>READ MORE</a>
         </div>
       </article>

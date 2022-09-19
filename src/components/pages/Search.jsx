@@ -17,12 +17,13 @@ export const Search = () => {
             type="text" 
             placeholder='Search for a character...' 
             required 
+            autoComplete='off'
             name='searchCharacter'
             value={searchCharacter}
             onChange={onInputChange}
           />
           <div className='fontAwesomeSearch'>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
           </div>
       </form>
 

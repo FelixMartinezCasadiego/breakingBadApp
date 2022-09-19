@@ -1,7 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { ItemListContainer } from '../item/ItemListContainer';
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <>
+    
+      <ItemListContainer />
+    
+    </>
   )
 }

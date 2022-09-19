@@ -1,23 +1,31 @@
-import { ItemListContainer } from "./components/item/ItemListContainer";
+import { Route, Routes } from "react-router-dom";
+import { ItemContainer } from "./components/item/ItemContainer";
+import { Home } from "./components/pages/Home";
 import { NavBar } from "./components/pages/NavBar";
-import { Search } from "./components/pages/Search";
 
 
 function App() {
 
   return (
-    <div>
+    <>
 
       <NavBar />
       <main>
 
-        <Search />
-        <ItemListContainer />
+        <Routes>
+
+          <Route exact path='/' element={<Home />} />
+          
+          <Route path='/character/:id' element={<ItemContainer />} />
+
+          <Route path='/*' element={<Home />} />
+
+        </Routes>
 
       </main>
       
 
-    </div>
+    </>
   )
 }
 
