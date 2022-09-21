@@ -4,7 +4,7 @@ export const Item = ({character}) => {
   return (
     <>
       
-      <div className="card mb-3" style="max-width: 540px;">
+      <div className="card m-5 widthByCard">
         <div className="row g-0">
           <div className="col-md-4">
             <img src={character.img} className="img-fluid rounded-start" alt={character.name} />
@@ -12,8 +12,11 @@ export const Item = ({character}) => {
           <div className="col-md-8">
             <div className="card-body">
               <h5 className="card-title"> {character.name} </h5>
-              <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+              <h6 className='mt-3'>Occupation:</h6>
+              <p className="card-text"> 
+                <br /> {character.occupation[0]}
+                <br /> {character.occupation[1]} </p> 
+              <p className="card-text"><small className="text-muted"> Status: {character.status} </small></p>
             </div>
           </div>
         </div>

@@ -1,27 +1,28 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { retriveCharacters, retriveQuotes } from '../../api/main';
+import { retriveCharacterByName, retriveCharacters, retriveQuotes } from '../../api/main';
 import { Search } from '../pages/Search';
 import { ItemList } from './ItemList';
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({q}) => {
 
     const [characters, setCharacters] = useState([]);
 
-    const [quotes, setQuotes] = useState([])
-
     useEffect(() => {
         
-        retriveCharacters()
-            .then((resp) => setCharacters(resp))
-            .catch((err) => {throw new Error(err)});
+        if(q !== null & q !== ''){
+            retriveCharacterByName(q)
+                .then((resp) => setCharacters(resp))
+                .catch((err) => {throw new Error(err)})
+        } else {
+            retriveCharacters()
+                .then((resp) => setCharacters(resp))
+                .catch((err) => {throw new Error(err)});
+        }
 
-        retriveQuotes()
-        .then((resp) => setQuotes(resp))
-        .catch((err) => {throw new Error(err)})
+    }, [q])
 
-    }, [])
 
   return (
     <>
@@ -32,9 +33,11 @@ export const ItemListContainer = () => {
             </div>
             
             <div className='row col-12 d-flex justify-content-center m-0 px-5'>
-            {
-                characters.map((character) => <ItemList character={character} key={character.char_id} quotes={quotes} /> )
-            }
+
+                {
+                    characters.map((character) => <ItemList character={character} key={character.char_id} /> )
+                }
+
             </div>          
 
         </div>

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../scss/main.scss';
 
-export const ItemList = ({character, quotes}) => {
+export const ItemList = ({character}) => {
 
   return (
     <>
@@ -22,11 +23,16 @@ export const ItemList = ({character, quotes}) => {
         </div>
         <div className="blog-card__info">
           <h5> {character.name} </h5>
-          <p>
-            <a href="#" className="icon-link mr-3"><i className="fa fa-pencil-square-o"></i> {character.nickname} </a>
+          <p className="icon-link mr-3">
+            <Link to={`/character/${character.char_id}`} className="icon-link mr-3">
+              <i className="fa fa-pencil-square-o"></i>
+              {character.nickname}
+            </Link>
           </p>
-          <p> {quotes.quote_id} </p>
-          <a href="#" className="btn btn--with-icon read-more"><i className="btn-icon fa fa-long-arrow-right"></i>READ MORE</a>
+          <Link to={`/character/${character.char_id}`} className="btn btn--with-icon read-more">
+            <i className="btn-icon fa fa-long-arrow-right"></i>
+            READ MORE
+          </Link>
         </div>
       </article>
 

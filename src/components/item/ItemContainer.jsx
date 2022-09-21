@@ -1,36 +1,35 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { retriveCharacters } from '../../api/main';
+import { retriveCharacterByName } from '../../api/main';
 import { Item } from './Item';
 
 export const ItemContainer = () => {
 
-    let params = useParams();
-
-    let characterByName = params.id;
-
     const [characterName, setCharacterName] = useState([]);
 
-    useEffect(() => {
+    let params = useParams();
 
-        retriveCharacters(characterByName)
-            .then((resp) => setCharacterName(resp) )
-            .catch((err) => {throw new Error(err)})
+    const characterByName = params.id;
+
+    useEffect(() => {
+        if(characterByName !== null){
+            retriveCharacterByName(characterByName)
+                .then((resp) => setCharacterName(resp))
+                .catch((err) => {throw new Error(err)})
+        }
 
     }, [characterByName])
     
 
     return (
         <>
-        
-            <div className='container-fluid'>
+            <div className='container-fluid d-flex justify-content-center'>
 
-                <div>
                     {
                         characterName.map((character) => <Item character={character} key={character.char_id} /> )
                     }
-                </div>
+
 
             </div>
         
