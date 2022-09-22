@@ -22,7 +22,7 @@ I used for the creation ReactJs, React Router Dom, Bootstrap and SCSS.
 
 ### Item Detail responsive
 
-![](imgGi/item2.png)
+![](imgGi/item2..png)
 
 ## Project Visualization
 
