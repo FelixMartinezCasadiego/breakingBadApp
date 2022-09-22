@@ -2,7 +2,6 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { retriveCharacterByName, retriveCharacters, retriveQuotes } from '../../api/main';
-import { Search } from '../pages/Search';
 import { ItemList } from './ItemList';
 
 export const ItemListContainer = ({q}) => {
@@ -27,10 +26,6 @@ export const ItemListContainer = ({q}) => {
   return (
     <>
         <div className='container-fluid'>
-
-            <div>
-                <Search />
-            </div>
             
             <div className='row col-12 d-flex justify-content-center m-0 px-5'>
 
