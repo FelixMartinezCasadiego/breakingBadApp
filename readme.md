@@ -10,11 +10,11 @@ I used for the creation ReactJs, React Router Dom, Bootstrap and SCSS.
 
 ### Home 
 
-![](imgGi/home1.png)
+![](imgGi/home2.png)
 
 ### Home responsive
 
-![](imgGi/home2.png)
+![](imgGi/home1.png)
 
 ### Item Detail
 
